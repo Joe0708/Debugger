@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770F24521F5C1F34001CDB4D /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770F24501F5C1F34001CDB4D /* folder@2x.png */; };
+		770F24531F5C1F34001CDB4D /* folder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770F24511F5C1F34001CDB4D /* folder@3x.png */; };
 		7725FE871F5B9699000E201A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725FE861F5B9699000E201A /* AppDelegate.swift */; };
 		7725FE891F5B9699000E201A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725FE881F5B9699000E201A /* ViewController.swift */; };
 		7725FE8C1F5B9699000E201A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7725FE8A1F5B9699000E201A /* Main.storyboard */; };
@@ -24,34 +26,28 @@
 		7784430A1F5BF0A2009F367E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778442FF1F5BF0A2009F367E /* Extensions.swift */; };
 		7784430B1F5BF0A2009F367E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443001F5BF0A2009F367E /* Logger.swift */; };
 		778443201F5BF201009F367E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7784431F1F5BF201009F367E /* libsqlite3.tbd */; };
-		7784433A1F5BF811009F367E /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443231F5BF811009F367E /* NFX.swift */; };
-		7784433B1F5BF811009F367E /* NFXAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443241F5BF811009F367E /* NFXAssets.swift */; };
-		7784433C1F5BF811009F367E /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443251F5BF811009F367E /* NFXDetailsController.swift */; };
-		7784433D1F5BF811009F367E /* NFXGenericBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443261F5BF811009F367E /* NFXGenericBodyDetailsController.swift */; };
-		7784433E1F5BF811009F367E /* NFXGenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443271F5BF811009F367E /* NFXGenericController.swift */; };
+		7784433A1F5BF811009F367E /* Netfox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443231F5BF811009F367E /* Netfox.swift */; };
+		7784433C1F5BF811009F367E /* NetfoxDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443251F5BF811009F367E /* NetfoxDetailsController.swift */; };
+		7784433E1F5BF811009F367E /* NetfoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443271F5BF811009F367E /* NetfoxViewController.swift */; };
 		7784433F1F5BF811009F367E /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443281F5BF811009F367E /* NFXHelper.swift */; };
 		778443401F5BF811009F367E /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443291F5BF811009F367E /* NFXHTTPModel.swift */; };
 		778443411F5BF811009F367E /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7784432A1F5BF811009F367E /* NFXHTTPModelManager.swift */; };
-		778443421F5BF811009F367E /* NFXImageBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7784432B1F5BF811009F367E /* NFXImageBodyDetailsController.swift */; };
-		778443431F5BF811009F367E /* NFXInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7784432C1F5BF811009F367E /* NFXInfoController.swift */; };
-		778443441F5BF811009F367E /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7784432D1F5BF811009F367E /* NFXListController.swift */; };
 		778443451F5BF811009F367E /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7784432E1F5BF811009F367E /* NFXProtocol.swift */; };
-		778443461F5BF811009F367E /* NFXRawBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7784432F1F5BF811009F367E /* NFXRawBodyDetailsController.swift */; };
-		778443471F5BF811009F367E /* NFXStatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443301F5BF811009F367E /* NFXStatisticsController.swift */; };
-		778443481F5BF811009F367E /* NFXWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443311F5BF811009F367E /* NFXWindowController.swift */; };
-		778443491F5BF811009F367E /* NFXHelper_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443331F5BF811009F367E /* NFXHelper_iOS.swift */; };
-		7784434A1F5BF811009F367E /* NFXInfoController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443341F5BF811009F367E /* NFXInfoController_iOS.swift */; };
-		7784434B1F5BF811009F367E /* NFXSettingsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443351F5BF811009F367E /* NFXSettingsController_iOS.swift */; };
-		7784434C1F5BF811009F367E /* NFXStatisticsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443361F5BF811009F367E /* NFXStatisticsController_iOS.swift */; };
+		7784434A1F5BF811009F367E /* DeviceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443341F5BF811009F367E /* DeviceInfoViewController.swift */; };
+		7784434B1F5BF811009F367E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443351F5BF811009F367E /* SettingsViewController.swift */; };
 		7784434D1F5BF812009F367E /* RequestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443371F5BF811009F367E /* RequestDetailViewController.swift */; };
 		7784434E1F5BF812009F367E /* RequestListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443381F5BF811009F367E /* RequestListCell.swift */; };
 		7784434F1F5BF812009F367E /* RequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443391F5BF811009F367E /* RequestListViewController.swift */; };
+		7794A8731F5C390900353FDA /* TextBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794A8711F5C390900353FDA /* TextBrowserViewController.swift */; };
+		7794A8741F5C390900353FDA /* ImageBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794A8721F5C390900353FDA /* ImageBrowserViewController.swift */; };
 		A857B3EA6B1ECA030EFC87A8 /* Pods_DebuggerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DBA362BCCF59C39A6842B2 /* Pods_DebuggerExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D2F5DA0F0F89E66BAADAF7D /* Pods-DebuggerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebuggerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DebuggerExample/Pods-DebuggerExample.debug.xcconfig"; sourceTree = "<group>"; };
 		63FABB19AA77A6F342A493E7 /* Pods-DebuggerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebuggerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DebuggerExample/Pods-DebuggerExample.release.xcconfig"; sourceTree = "<group>"; };
+		770F24501F5C1F34001CDB4D /* folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@2x.png"; sourceTree = "<group>"; };
+		770F24511F5C1F34001CDB4D /* folder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@3x.png"; sourceTree = "<group>"; };
 		7725FE831F5B9699000E201A /* DebuggerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebuggerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7725FE861F5B9699000E201A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7725FE881F5B9699000E201A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,28 +68,20 @@
 		778443001F5BF0A2009F367E /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		7784431B1F5BF1EB009F367E /* DebuggerExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DebuggerExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		7784431F1F5BF201009F367E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		778443231F5BF811009F367E /* NFX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFX.swift; sourceTree = "<group>"; };
-		778443241F5BF811009F367E /* NFXAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXAssets.swift; sourceTree = "<group>"; };
-		778443251F5BF811009F367E /* NFXDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXDetailsController.swift; sourceTree = "<group>"; };
-		778443261F5BF811009F367E /* NFXGenericBodyDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXGenericBodyDetailsController.swift; sourceTree = "<group>"; };
-		778443271F5BF811009F367E /* NFXGenericController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXGenericController.swift; sourceTree = "<group>"; };
+		778443231F5BF811009F367E /* Netfox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netfox.swift; sourceTree = "<group>"; };
+		778443251F5BF811009F367E /* NetfoxDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetfoxDetailsController.swift; sourceTree = "<group>"; };
+		778443271F5BF811009F367E /* NetfoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetfoxViewController.swift; sourceTree = "<group>"; };
 		778443281F5BF811009F367E /* NFXHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHelper.swift; sourceTree = "<group>"; };
 		778443291F5BF811009F367E /* NFXHTTPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHTTPModel.swift; sourceTree = "<group>"; };
 		7784432A1F5BF811009F367E /* NFXHTTPModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHTTPModelManager.swift; sourceTree = "<group>"; };
-		7784432B1F5BF811009F367E /* NFXImageBodyDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXImageBodyDetailsController.swift; sourceTree = "<group>"; };
-		7784432C1F5BF811009F367E /* NFXInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXInfoController.swift; sourceTree = "<group>"; };
-		7784432D1F5BF811009F367E /* NFXListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXListController.swift; sourceTree = "<group>"; };
 		7784432E1F5BF811009F367E /* NFXProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXProtocol.swift; sourceTree = "<group>"; };
-		7784432F1F5BF811009F367E /* NFXRawBodyDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXRawBodyDetailsController.swift; sourceTree = "<group>"; };
-		778443301F5BF811009F367E /* NFXStatisticsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXStatisticsController.swift; sourceTree = "<group>"; };
-		778443311F5BF811009F367E /* NFXWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXWindowController.swift; sourceTree = "<group>"; };
-		778443331F5BF811009F367E /* NFXHelper_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHelper_iOS.swift; sourceTree = "<group>"; };
-		778443341F5BF811009F367E /* NFXInfoController_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXInfoController_iOS.swift; sourceTree = "<group>"; };
-		778443351F5BF811009F367E /* NFXSettingsController_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXSettingsController_iOS.swift; sourceTree = "<group>"; };
-		778443361F5BF811009F367E /* NFXStatisticsController_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXStatisticsController_iOS.swift; sourceTree = "<group>"; };
+		778443341F5BF811009F367E /* DeviceInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewController.swift; sourceTree = "<group>"; };
+		778443351F5BF811009F367E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		778443371F5BF811009F367E /* RequestDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDetailViewController.swift; sourceTree = "<group>"; };
 		778443381F5BF811009F367E /* RequestListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListCell.swift; sourceTree = "<group>"; };
 		778443391F5BF811009F367E /* RequestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListViewController.swift; sourceTree = "<group>"; };
+		7794A8711F5C390900353FDA /* TextBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBrowserViewController.swift; sourceTree = "<group>"; };
+		7794A8721F5C390900353FDA /* ImageBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowserViewController.swift; sourceTree = "<group>"; };
 		B4DBA362BCCF59C39A6842B2 /* Pods_DebuggerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DebuggerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,6 +143,8 @@
 		778442F41F5BF0A2009F367E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				770F24501F5C1F34001CDB4D /* folder@2x.png */,
+				770F24511F5C1F34001CDB4D /* folder@3x.png */,
 				778442F51F5BF0A2009F367E /* down@2x.png */,
 				778442F61F5BF0A2009F367E /* down@3x.png */,
 				778442F71F5BF0A2009F367E /* network@2x.png */,
@@ -174,6 +164,8 @@
 				778442FE1F5BF0A2009F367E /* DebuggerView.swift */,
 				778442FF1F5BF0A2009F367E /* Extensions.swift */,
 				778443001F5BF0A2009F367E /* Logger.swift */,
+				7794A8711F5C390900353FDA /* TextBrowserViewController.swift */,
+				7794A8721F5C390900353FDA /* ImageBrowserViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -190,21 +182,13 @@
 		778443221F5BF811009F367E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				778443231F5BF811009F367E /* NFX.swift */,
-				778443241F5BF811009F367E /* NFXAssets.swift */,
-				778443251F5BF811009F367E /* NFXDetailsController.swift */,
-				778443261F5BF811009F367E /* NFXGenericBodyDetailsController.swift */,
-				778443271F5BF811009F367E /* NFXGenericController.swift */,
+				778443231F5BF811009F367E /* Netfox.swift */,
+				778443251F5BF811009F367E /* NetfoxDetailsController.swift */,
+				778443271F5BF811009F367E /* NetfoxViewController.swift */,
 				778443281F5BF811009F367E /* NFXHelper.swift */,
 				778443291F5BF811009F367E /* NFXHTTPModel.swift */,
 				7784432A1F5BF811009F367E /* NFXHTTPModelManager.swift */,
-				7784432B1F5BF811009F367E /* NFXImageBodyDetailsController.swift */,
-				7784432C1F5BF811009F367E /* NFXInfoController.swift */,
-				7784432D1F5BF811009F367E /* NFXListController.swift */,
 				7784432E1F5BF811009F367E /* NFXProtocol.swift */,
-				7784432F1F5BF811009F367E /* NFXRawBodyDetailsController.swift */,
-				778443301F5BF811009F367E /* NFXStatisticsController.swift */,
-				778443311F5BF811009F367E /* NFXWindowController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -212,10 +196,8 @@
 		778443321F5BF811009F367E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				778443331F5BF811009F367E /* NFXHelper_iOS.swift */,
-				778443341F5BF811009F367E /* NFXInfoController_iOS.swift */,
-				778443351F5BF811009F367E /* NFXSettingsController_iOS.swift */,
-				778443361F5BF811009F367E /* NFXStatisticsController_iOS.swift */,
+				778443341F5BF811009F367E /* DeviceInfoViewController.swift */,
+				778443351F5BF811009F367E /* SettingsViewController.swift */,
 				778443371F5BF811009F367E /* RequestDetailViewController.swift */,
 				778443381F5BF811009F367E /* RequestListCell.swift */,
 				778443391F5BF811009F367E /* RequestListViewController.swift */,
@@ -276,7 +258,7 @@
 				TargetAttributes = {
 					7725FE821F5B9699000E201A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 94BV5KL5KF;
+						DevelopmentTeam = TTV4VMEQ9V;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -310,7 +292,9 @@
 				778443011F5BF0A2009F367E /* down@2x.png in Resources */,
 				7725FE911F5B9699000E201A /* LaunchScreen.storyboard in Resources */,
 				778443071F5BF0A2009F367E /* up@2x.png in Resources */,
+				770F24531F5C1F34001CDB4D /* folder@3x.png in Resources */,
 				778443051F5BF0A2009F367E /* trash@2x.png in Resources */,
+				770F24521F5C1F34001CDB4D /* folder@2x.png in Resources */,
 				778443041F5BF0A2009F367E /* network@3x.png in Resources */,
 				778443061F5BF0A2009F367E /* trash@3x.png in Resources */,
 				778443031F5BF0A2009F367E /* network@2x.png in Resources */,
@@ -385,31 +369,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				778443401F5BF811009F367E /* NFXHTTPModel.swift in Sources */,
-				778443471F5BF811009F367E /* NFXStatisticsController.swift in Sources */,
-				7784434A1F5BF811009F367E /* NFXInfoController_iOS.swift in Sources */,
-				7784433E1F5BF811009F367E /* NFXGenericController.swift in Sources */,
-				7784433B1F5BF811009F367E /* NFXAssets.swift in Sources */,
+				7784434A1F5BF811009F367E /* DeviceInfoViewController.swift in Sources */,
+				7784433E1F5BF811009F367E /* NetfoxViewController.swift in Sources */,
 				7784434F1F5BF812009F367E /* RequestListViewController.swift in Sources */,
-				778443481F5BF811009F367E /* NFXWindowController.swift in Sources */,
-				778443431F5BF811009F367E /* NFXInfoController.swift in Sources */,
-				778443461F5BF811009F367E /* NFXRawBodyDetailsController.swift in Sources */,
-				778443421F5BF811009F367E /* NFXImageBodyDetailsController.swift in Sources */,
+				7794A8741F5C390900353FDA /* ImageBrowserViewController.swift in Sources */,
 				7784434D1F5BF812009F367E /* RequestDetailViewController.swift in Sources */,
-				7784434B1F5BF811009F367E /* NFXSettingsController_iOS.swift in Sources */,
+				7784434B1F5BF811009F367E /* SettingsViewController.swift in Sources */,
 				7784430B1F5BF0A2009F367E /* Logger.swift in Sources */,
 				7725FE891F5B9699000E201A /* ViewController.swift in Sources */,
 				778443411F5BF811009F367E /* NFXHTTPModelManager.swift in Sources */,
-				778443441F5BF811009F367E /* NFXListController.swift in Sources */,
 				7784433F1F5BF811009F367E /* NFXHelper.swift in Sources */,
-				7784433C1F5BF811009F367E /* NFXDetailsController.swift in Sources */,
+				7784433C1F5BF811009F367E /* NetfoxDetailsController.swift in Sources */,
 				7784434E1F5BF812009F367E /* RequestListCell.swift in Sources */,
 				778443091F5BF0A2009F367E /* DebuggerView.swift in Sources */,
-				778443491F5BF811009F367E /* NFXHelper_iOS.swift in Sources */,
 				7725FE871F5B9699000E201A /* AppDelegate.swift in Sources */,
-				7784433A1F5BF811009F367E /* NFX.swift in Sources */,
-				7784433D1F5BF811009F367E /* NFXGenericBodyDetailsController.swift in Sources */,
-				7784434C1F5BF811009F367E /* NFXStatisticsController_iOS.swift in Sources */,
+				7784433A1F5BF811009F367E /* Netfox.swift in Sources */,
 				7784430A1F5BF0A2009F367E /* Extensions.swift in Sources */,
+				7794A8731F5C390900353FDA /* TextBrowserViewController.swift in Sources */,
 				778443451F5BF811009F367E /* NFXProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +459,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -525,6 +502,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -535,7 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 94BV5KL5KF;
+				DEVELOPMENT_TEAM = TTV4VMEQ9V;
 				INFOPLIST_FILE = DebuggerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Joe.DebuggerExample;
@@ -552,7 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 94BV5KL5KF;
+				DEVELOPMENT_TEAM = TTV4VMEQ9V;
 				INFOPLIST_FILE = DebuggerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Joe.DebuggerExample;

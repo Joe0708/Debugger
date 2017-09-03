@@ -1,21 +1,12 @@
-//
-//  NFXProtocol.swift
-//  netfox
-//
-//  Copyright © 2016 netfox. All rights reserved.
-//
-
 import Foundation
 
 @objc
-open class NFXProtocol: URLProtocol
-{
+open class NFXProtocol: URLProtocol {
     var connection: NSURLConnection?
     var model: NFXHTTPModel?
     var session: URLSession?
     
-    override open class func canInit(with request: URLRequest) -> Bool
-    {
+    override open class func canInit(with request: URLRequest) -> Bool{
         return canServeRequest(request)
     }
     
@@ -27,7 +18,7 @@ open class NFXProtocol: URLProtocol
     
     fileprivate class func canServeRequest(_ request: URLRequest) -> Bool
     {
-        if !NFX.sharedInstance().isEnabled() {
+        if !Netfox.shared.isEnabled() {
             return false
         }
         
@@ -36,7 +27,7 @@ open class NFXProtocol: URLProtocol
                 return false
             }
 
-            for ignoredURL in NFX.sharedInstance().getIgnoredURLs() {
+            for ignoredURL in Netfox.shared.getIgnoredURLs() {
                 if url.absoluteString.hasPrefix(ignoredURL) {
                     return false
                 }
@@ -104,13 +95,11 @@ open class NFXProtocol: URLProtocol
         
     }
     
-    override open class func canonicalRequest(for request: URLRequest) -> URLRequest
-    {
+    override open class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
         
-    func loaded()
-    {
+    func loaded() {
         if (self.model != nil) {
             NFXHTTPModelManager.sharedInstance.add(self.model!)
         }

@@ -18,8 +18,7 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class NFXHTTPModel: NSObject
-{
+class NFXHTTPModel: NSObject {
     var requestURL: URL?
     var requestURLString: String? {
         return requestURL != nil ? requestURL!.absoluteString : "Unknown"
@@ -42,39 +41,36 @@ class NFXHTTPModel: NSObject
     
     var timeInterval: Float?
     
-    var randomHash: NSString?
+    var randomHash: String?
     
     var shortType = HTTPModelShortType.OTHER.rawValue
     
     var noResponse: Bool = true
     
-    func saveRequest(_ request: URLRequest)
-    {
+    func saveRequest(_ request: URLRequest) {
         self.requestDate = Date()
         self.requestTime = getTimeFromDate(self.requestDate!)
         self.requestURL = request.url
-        self.requestMethod = request.getNFXMethod()
+        self.requestMethod = request.httpMethod ?? "Unknown"
         self.requestCachePolicy = request.getNFXCachePolicy()
         self.requestTimeout = request.getNFXTimeout()
         self.requestHeaders = request.getNFXHeaders()
         self.requestType = requestHeaders?["Content-Type"] as! String?
         saveRequestBodyData(request.getNFXBody())
-        formattedRequestLogEntry().appendToFile(filePath: NFXPath.SessionLog)
+        formattedRequestLogEntry().appendToFile(filePath: sessionLogPath)
 
     }
     
-    func saveErrorResponse()
-    {
+    func saveErrorResponse() {
         self.responseDate = Date()
     }
     
-    func saveResponse(_ response: URLResponse, data: Data)
-    {
+    func saveResponse(_ response: URLResponse, data: Data) {
         self.noResponse = false
         
         self.responseDate = Date()
         self.responseTime = getTimeFromDate(self.responseDate!)
-        self.responseStatus = response.getNFXStatus()
+        self.responseStatus = (response as? HTTPURLResponse)?.statusCode ?? 999
         self.responseHeaders = response.getNFXHeaders()
         
         let headers = response.getNFXHeaders()
@@ -87,28 +83,25 @@ class NFXHTTPModel: NSObject
         self.timeInterval = Float(self.responseDate!.timeIntervalSince(self.requestDate!))
         
         saveResponseBodyData(data)
-        formattedResponseLogEntry().appendToFile(filePath: NFXPath.SessionLog)
+        formattedResponseLogEntry().appendToFile(filePath: sessionLogPath)
     }
     
     
-    func saveRequestBodyData(_ data: Data)
-    {
-        let tempBodyString = NSString.init(data: data, encoding: String.Encoding.utf8.rawValue)
+    func saveRequestBodyData(_ data: Data) {
         self.requestBodyLength = data.count
-        if (tempBodyString != nil) {
-            saveData(tempBodyString!, toFile: getRequestBodyFilepath())
+        if let bodyString = String(data: data, encoding: .utf8) {
+            saveData(bodyString, toFile: getRequestBodyFilepath())
         }
     }
     
-    func saveResponseBodyData(_ data: Data)
-    {
-        var bodyString: NSString?
+    func saveResponseBodyData(_ data: Data){
+        var bodyString: String?
         
-        if self.shortType as String == HTTPModelShortType.IMAGE.rawValue {
-            bodyString = data.base64EncodedString(options: .endLineWithLineFeed) as NSString?
+        if self.shortType == HTTPModelShortType.IMAGE.rawValue {
+            bodyString = data.base64EncodedString(options: .endLineWithLineFeed)
 
         } else {
-            if let tempBodyString = NSString.init(data: data, encoding: String.Encoding.utf8.rawValue) {
+            if let tempBodyString = String(data: data, encoding: .utf8) {
                 bodyString = tempBodyString
             }
         }
@@ -120,27 +113,24 @@ class NFXHTTPModel: NSObject
         
     }
     
-    fileprivate func prettyOutput(_ rawData: Data, contentType: String? = nil) -> NSString
-    {
+    fileprivate func prettyOutput(_ rawData: Data, contentType: String? = nil) -> String{
         if let contentType = contentType {
             let shortType = getShortTypeFrom(contentType)
             if let output = prettyPrint(rawData, type: shortType) {
-                return output as NSString
+                return output
             }
         }
-        return NSString(data: rawData, encoding: String.Encoding.utf8.rawValue) ?? ""
+        return String(data: rawData, encoding: .utf8) ?? ""
     }
 
-    func getRequestBody() -> NSString
-    {
+    func getRequestBody() -> String {
         guard let data = readRawData(getRequestBodyFilepath()) else {
             return ""
         }
         return prettyOutput(data, contentType: requestType)
     }
     
-    func getResponseBody() -> NSString
-    {
+    func getResponseBody() -> String {
         guard let data = readRawData(getResponseBodyFilepath()) else {
             return ""
         }
@@ -148,57 +138,24 @@ class NFXHTTPModel: NSObject
         return prettyOutput(data, contentType: responseType)
     }
     
-    func getRandomHash() -> NSString
-    {
-        if !(self.randomHash != nil) {
-            self.randomHash = UUID().uuidString as NSString?
-        }
-        return self.randomHash!
+    func getRequestBodyFilepath() -> String {
+        return FileManager.debugger.appendingPathComponent("Request").appendingPathComponent(requestDate!.description + ".log")
     }
     
-    func getRequestBodyFilepath() -> String
-    {
-        let dir = getDocumentsPath() as NSString
-        return dir.appendingPathComponent(getRequestBodyFilename())
+    func getResponseBodyFilepath() -> String {
+        return FileManager.debugger.appendingPathComponent("Response").appendingPathComponent(requestDate!.description + ".log")
     }
     
-    func getRequestBodyFilename() -> String
-    {
-        return String("nfx_request_body_") + "\(self.requestTime!)_\(getRandomHash() as String)"
+    func saveData(_ dataString: String, toFile: String) {
+        FileManager.create(at: toFile)
+        FileManager.save(content: dataString, savePath: toFile)
     }
     
-    func getResponseBodyFilepath() -> String
-    {
-        let dir = getDocumentsPath() as NSString
-        return dir.appendingPathComponent(getResponseBodyFilename())
-    }
-    
-    func getResponseBodyFilename() -> String
-    {
-        return String("nfx_response_body_") + "\(self.requestTime!)_\(getRandomHash() as String)"
-    }
-    
-    func getDocumentsPath() -> String
-    {
-        return NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first!
-    }
-    
-    func saveData(_ dataString: NSString, toFile: String)
-    {
-        do {
-            try dataString.write(toFile: toFile, atomically: false, encoding: String.Encoding.utf8.rawValue)
-        } catch {
-            print("catch !!!")
-        }
-    }
-    
-    func readRawData(_ fromFile: String) -> Data?
-    {
+    func readRawData(_ fromFile: String) -> Data? {
         return (try? Data(contentsOf: URL(fileURLWithPath: fromFile)))
     }
     
-    func getTimeFromDate(_ date: Date) -> String
-    {
+    func getTimeFromDate(_ date: Date) -> String {
         let calendar = Calendar.current
         let components = (calendar as NSCalendar).components([.hour, .minute, .second], from: date)
         guard let hour = components.hour, let minutes = components.minute, let second = components.second else {
@@ -207,8 +164,7 @@ class NFXHTTPModel: NSObject
         return String(format: "%d:%02d:%d", hour, minutes, second)
     }
     
-    func getShortTypeFrom(_ contentType: String) -> HTTPModelShortType
-    {
+    func getShortTypeFrom(_ contentType: String) -> HTTPModelShortType {
         if NSPredicate(format: "SELF MATCHES %@",
                                 "^application/(vnd\\.(.*)\\+)?json$").evaluate(with: contentType) {
             return .JSON
@@ -229,31 +185,24 @@ class NFXHTTPModel: NSObject
         return .OTHER
     }
     
-    func prettyPrint(_ rawData: Data, type: HTTPModelShortType) -> NSString?
-    {
+    func prettyPrint(_ rawData: Data, type: HTTPModelShortType) -> String? {
         switch type {
         case .JSON:
             do {
                 let rawJsonData = try JSONSerialization.jsonObject(with: rawData, options: [])
                 let prettyPrintedString = try JSONSerialization.data(withJSONObject: rawJsonData, options: [.prettyPrinted])
-                return NSString(data: prettyPrintedString, encoding: String.Encoding.utf8.rawValue)
+                return String(data: prettyPrintedString, encoding: .utf8)
             } catch {
                 return nil
             }
         
         default:
             return nil
-            
         }
     }
     
-    func isSuccessful() -> Bool
-    {
-        if (self.responseStatus != nil) && (self.responseStatus < 400) {
-            return true
-        } else {
-            return false
-        }
+    func isSuccessful() -> Bool {
+        return self.responseStatus != nil && self.responseStatus < 400
     }
     
     

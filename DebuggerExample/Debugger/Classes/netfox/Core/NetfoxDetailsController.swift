@@ -1,10 +1,3 @@
-//
-//  NFXDetailsController.swift
-//  netfox
-//
-//  Copyright © 2016 netfox. All rights reserved.
-//
-
 import Foundation
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
@@ -27,10 +20,9 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class NFXDetailsController: NFXGenericController {
+class NetfoxDetailsController: NetfoxViewController {
 
-    enum EDetailsView
-    {
+    enum EDetailsView {
         case info
         case request
         case response

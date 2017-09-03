@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Debugger"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "An in-app debugging tool for iOS."
 
   s.description  = <<-DESC
@@ -15,9 +15,9 @@ An in-app debugging tool for iOS
 
   s.author            = { "Joe" => "joesir7@foxmail.com" }
 
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "8.0"
 
-  s.ios.deployment_target = "9.0"
+  s.ios.deployment_target = "8.0"
 
   s.source       = { :git => "https://github.com/Joe0708/Debugger.git", :tag => "#{s.version}" }
 

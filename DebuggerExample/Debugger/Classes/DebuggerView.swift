@@ -68,15 +68,15 @@ public class DebuggerView: UIView {
 //        let trashBar = UIBarButtonItem(customView: btn)
         
         let trashBar = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(clearOutputAction))
+        trashBar.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
         trashBar.tintColor = #colorLiteral(red: 0.006328135729, green: 0.006339018233, blue: 0.006329820026, alpha: 1)
-        
         let hideBar = UIBarButtonItem(customView: self.hideBtn)
         
         // Networking
         let networkBar = UIBarButtonItem(image: UIImage.make(name: "network"), style: .plain, target: self, action: #selector(networkBarClickAction))
         networkBar.tintColor = #colorLiteral(red: 0.006328135729, green: 0.006339018233, blue: 0.006329820026, alpha: 1)
         
-        let folderBar = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(folderBarClickAction))
+        let folderBar =  UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(folderBarClickAction))
         folderBar.tintColor = #colorLiteral(red: 0.006328135729, green: 0.006339018233, blue: 0.006329820026, alpha: 1)
         
         view.items = [hideBar, networkBar, folderBar, flexibleSpace, trashBar]
@@ -106,8 +106,8 @@ public class DebuggerView: UIView {
                                  width: UIScreen.main.bounds.width,
                                  height: height))
         setup()
-        NFX.sharedInstance().start()
-        NFX.sharedInstance().setGesture(.custom)
+        Netfox.shared.start()
+        Netfox.shared.setGesture(.custom)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -154,14 +154,25 @@ public class DebuggerView: UIView {
     
     @objc private func networkBarClickAction() {
         if isShow { toggle() }
-        NFX.sharedInstance().show()
+        Netfox.shared.show()
     }
     
     @objc private func folderBarClickAction() {
         if isShow { toggle() }
         let rootViewController = UIApplication.shared.keyWindow?.rootViewController
         let presentingViewController = rootViewController?.presentedViewController ?? rootViewController
-        presentingViewController?.show(SandboxBrowser(), sender: nil)
+        let sandboxV = SandboxBrowser()
+        sandboxV.didSelectFile = { file, vc in
+            switch file.type {
+            case .log:
+                let textBrowserVC = TextBrowserViewController()
+                textBrowserVC.bodyText = try? String(contentsOfFile: file.path, encoding: .utf8)
+                vc.navigationController?.pushViewController(textBrowserVC, animated: true)
+            default:
+                break
+            }
+        }
+        presentingViewController?.show(sandboxV, sender: nil)
     }
     
     func toggle() {

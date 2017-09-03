@@ -1,6 +1,6 @@
 import UIKit
 
-class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: NetfoxViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView: UITableView = UITableView()
     var tableData = [HTTPModelShortType]()
@@ -14,13 +14,13 @@ class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITa
         self.title = "Settings"
         
         self.tableData = HTTPModelShortType.allValues
-        self.filters =  NFX.sharedInstance().getCachedFilters()
+        self.filters =  Netfox.shared.getCachedFilters()
         
         self.edgesForExtendedLayout = UIRectEdge()
         self.extendedLayoutIncludesOpaqueBars = false
         self.automaticallyAdjustsScrollViewInsets = false
         
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage.NFXStatistics(), style: .plain, target: self, action: #selector(NFXSettingsController_iOS.statisticsButtonPressed)), UIBarButtonItem(image: UIImage.NFXInfo(), style: .plain, target: self, action: #selector(NFXSettingsController_iOS.infoButtonPressed))]
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.NFXInfo(), style: .plain, target: self, action: #selector(infoButtonPressed))
         
         self.tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 60)
         self.tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -38,17 +38,11 @@ class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITa
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NFX.sharedInstance().cacheFilters(self.filters)
+        Netfox.shared.cacheFilters(self.filters)
     }
     
     func infoButtonPressed() {
-        self.navigationController?.pushViewController(NFXInfoController_iOS(), animated: true)
-    }
-    
-    func statisticsButtonPressed() {
-        var statisticsController: NFXStatisticsController_iOS
-        statisticsController = NFXStatisticsController_iOS()
-        self.navigationController?.pushViewController(statisticsController, animated: true)
+        navigationController?.pushViewController(DeviceInfoViewController(), animated: true)
     }
     
     // MARK: UITableViewDataSource
@@ -64,7 +58,7 @@ class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
-        cell.tintColor = UIColor.NFXOrangeColor()
+        cell.tintColor = .orange
         
         switch (indexPath as NSIndexPath).section
         {
@@ -72,8 +66,8 @@ class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITa
             cell.textLabel?.text = "Logging"
             let nfxEnabledSwitch: UISwitch
             nfxEnabledSwitch = UISwitch()
-            nfxEnabledSwitch.setOn(NFX.sharedInstance().isEnabled(), animated: false)
-            nfxEnabledSwitch.addTarget(self, action: #selector(NFXSettingsController_iOS.nfxEnabledSwitchValueChanged(_:)), for: .valueChanged)
+            nfxEnabledSwitch.setOn(Netfox.shared.isEnabled(), animated: false)
+            nfxEnabledSwitch.addTarget(self, action: #selector(nfxEnabledSwitchValueChanged(_:)), for: .valueChanged)
             cell.accessoryView = nfxEnabledSwitch
             return cell
             
@@ -86,14 +80,14 @@ class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITa
         case 2:
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.text = "Share Session Logs"
-            cell.textLabel?.textColor = UIColor.NFXGreenColor()
+            cell.textLabel?.textColor = .green
             cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
             return cell
             
         case 3:
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.text = "Clear data"
-            cell.textLabel?.textColor = UIColor.NFXRedColor()
+            cell.textLabel?.textColor = .red
             cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
             
             return cell
@@ -114,7 +108,7 @@ class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
         let headerView = UIView()
-        headerView.backgroundColor = UIColor.NFXGray95Color()
+        headerView.backgroundColor = UIColor(netHex: 0xf2f2f2)
         
         switch section {
         case 1:
@@ -169,11 +163,7 @@ class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITa
     }
     
     func nfxEnabledSwitchValueChanged(_ sender: UISwitch) {
-        if sender.isOn {
-            NFX.sharedInstance().enable()
-        } else {
-            NFX.sharedInstance().disable()
-        }
+        sender.isOn ? Netfox.shared.enable() : Netfox.shared.disable()
     }
     
     func clearDataButtonPressedOnTableIndex(_ index: IndexPath) {
@@ -183,7 +173,7 @@ class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITa
         
         actionSheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         actionSheetController.addAction(UIAlertAction(title: "Yes", style: .destructive) { _ in
-            NFX.sharedInstance().clearOldData()
+            Netfox.shared.clearOldData()
         })
         
         self.present(actionSheetController, animated: true, completion: nil)
@@ -192,7 +182,7 @@ class NFXSettingsController_iOS: NFXGenericController, UITableViewDelegate, UITa
     func shareSessionLogsPressed() {
         
         let controller = UIActivityViewController(
-            activityItems: [NSURL(fileURLWithPath: NFXPath.SessionLog)],
+            activityItems: [NSURL(fileURLWithPath: sessionLogPath)],
             applicationActivities: nil)
         
         controller.excludedActivityTypes = [

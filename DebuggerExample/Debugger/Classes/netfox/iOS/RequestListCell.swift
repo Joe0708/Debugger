@@ -20,7 +20,7 @@ class RequestListCell: UITableViewCell {
         contentView.addSubview(self.statusView)
         
         titleLabel = UILabel(frame: CGRect.zero)
-        titleLabel.textColor = UIColor.NFXBlackColor()
+        titleLabel.textColor = .black
         titleLabel.font = UIFont.systemFont(ofSize: 12)
         contentView.addSubview(titleLabel)
         
@@ -67,7 +67,7 @@ class RequestListCell: UITableViewCell {
         setStatus(obj.responseStatus ?? 999)
         
         let responseDate = obj.responseDate as Date? ?? Date()
-        self.circleView.isHidden = !responseDate.isGreaterThanDate(NFX.sharedInstance().getLastVisitDate())
+        circleView.isHidden = !responseDate.isGreaterThanDate(Netfox.shared.getLastVisitDate())
         
         
         if let requestURL = obj.requestURL,
@@ -118,9 +118,9 @@ class RequestListCell: UITableViewCell {
         if status == 999 {
             self.statusView.backgroundColor = UIColor.NFXGray44Color() //gray
         } else if status < 400 {
-            self.statusView.backgroundColor = UIColor.NFXGreenColor() //green
+            self.statusView.backgroundColor = .green //green
         } else {
-            self.statusView.backgroundColor = UIColor.NFXRedColor() //red
+            self.statusView.backgroundColor = .red //red
         }
     }
 }

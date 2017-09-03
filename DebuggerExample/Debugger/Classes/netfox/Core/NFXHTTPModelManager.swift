@@ -17,7 +17,7 @@ final class NFXHTTPModelManager {
     var getModels: [NFXHTTPModel] {
         var predicates = [NSPredicate]()
         
-        let filterValues = NFX.sharedInstance().getCachedFilters()
+        let filterValues = Netfox.shared.getCachedFilters()
         let filterNames = HTTPModelShortType.allValues
         
         var index = 0

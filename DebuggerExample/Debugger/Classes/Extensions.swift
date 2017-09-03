@@ -30,9 +30,15 @@ extension FileManager {
         }
     }
     
-    public class var log: String {
+    public class var debugger: String {
         get {
-            return document.appendingPathComponent("Logs")
+            return document.appendingPathComponent("debugger")
+        }
+    }
+    
+    public class var logger: String {
+        get {
+            return debugger.appendingPathComponent("Logs")
         }
     }
     
@@ -57,7 +63,7 @@ extension FileManager {
             do {
                 try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("error:\(error)")
+                Logger.error("error:\(error)")
                 return error
             }
         }
@@ -71,6 +77,10 @@ extension Date {
         let dateFormatter: DateFormatter = DateFormatter();
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: self)
+    }
+    
+    func isGreaterThanDate(_ dateToCompare: Date) -> Bool {
+        return compare(dateToCompare) == ComparisonResult.orderedDescending
     }
     
     public func description(dateSeparator: String = "/", usFormat: Bool = false, nanosecond: Bool = false) -> String {
@@ -103,5 +113,24 @@ extension UIImage {
         let bundle = Bundle(for: DebuggerView.self)
         let path = bundle.resourcePath?.appendingPathComponent(name + ".png")
         return UIImage(contentsOfFile: path!)
+    }
+}
+
+extension String {
+    func appendToFile(filePath: String) {
+        let contentToAppend = self
+        
+        if let fileHandle = FileHandle(forWritingAtPath: filePath) {
+            /* Append to file */
+            fileHandle.seekToEndOfFile()
+            fileHandle.write(contentToAppend.data(using: String.Encoding.utf8)!)
+        } else {
+            /* Create new file */
+            do {
+                try contentToAppend.write(toFile: filePath, atomically: true, encoding: .utf8)
+            } catch {
+                Logger.error("Error creating \(filePath)")
+            }
+        }
     }
 }

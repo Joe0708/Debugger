@@ -53,7 +53,9 @@ public struct Logger {
         let dateString = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
         let logString = dateString + " \(filenameWithoutExtension):\(line) " + _message
         logAttrString.append(handleLog(logString, type: type))
-        didAddLog?()
+        DispatchQueue.main.async {
+            didAddLog?()
+        }
         
         self.detailedLog += logMessage
     }
@@ -103,7 +105,7 @@ public struct Logger {
     /// - Parameters:
     ///   - path: Save path.
     ///   - filename: Log filename.
-    public static func saveLog(in path: String = FileManager.log,
+    public static func saveLog(in path: String = FileManager.logger,
                                filename: String = Date().YYYYMMDDDateString.appendingPathExtension("log")!) {
         if detailedLog.isEmpty { return }
         let fullPath = path.appendingPathComponent(filename)
