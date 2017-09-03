@@ -1,0 +1,27 @@
+PODS:
+  - netfox (1.9)
+  - SandboxBrowser (0.0.3)
+  - SpreadsheetView (0.8.3)
+
+DEPENDENCIES:
+  - netfox (from `https://github.com/Joe0708/netfox.git`)
+  - SandboxBrowser
+  - SpreadsheetView
+
+EXTERNAL SOURCES:
+  netfox:
+    :git: https://github.com/Joe0708/netfox.git
+
+CHECKOUT OPTIONS:
+  netfox:
+    :commit: 2b938a6bedb810149c060028c578113d36ab3fbe
+    :git: https://github.com/Joe0708/netfox.git
+
+SPEC CHECKSUMS:
+  netfox: 110ebbfb7abf22333649a2966e571fecca9616ed
+  SandboxBrowser: 285cdd3c61e0e7b0a4ea7f85f44d73eb32e529fb
+  SpreadsheetView: 022fa21a864d5d44db22f0ef45761140e841adc7
+
+PODFILE CHECKSUM: 4ef1d53408e091e243bcab12e7be2cd53f056f0c
+
+COCOAPODS: 1.3.1
