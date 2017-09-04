@@ -24,6 +24,7 @@ class TextBrowserViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Body details"
+        view.backgroundColor = .white
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyLabel))
 

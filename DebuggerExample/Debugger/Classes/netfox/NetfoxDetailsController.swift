@@ -33,7 +33,7 @@ class NetfoxDetailsController: NetfoxViewController {
         // Do view setup here.
     }
     
-    func getInfoStringFromObject(_ object: NFXHTTPModel) -> NSAttributedString {
+    func getInfoStringFromObject(_ object: NetfoxHTTPModel) -> NSAttributedString {
         var tempString: String
         tempString = String()
         
@@ -53,7 +53,7 @@ class NetfoxDetailsController: NetfoxViewController {
         return formatNFXString(tempString)
     }
 
-    func getRequestStringFromObject(_ object: NFXHTTPModel) -> NSAttributedString {
+    func getRequestStringFromObject(_ object: NetfoxHTTPModel) -> NSAttributedString {
         var tempString: String
         tempString = String()
         
@@ -73,7 +73,7 @@ class NetfoxDetailsController: NetfoxViewController {
         return formatNFXString(tempString)
     }
 
-    func getRequestBodyStringFooter(_ object: NFXHTTPModel) -> String {
+    func getRequestBodyStringFooter(_ object: NetfoxHTTPModel) -> String {
         var tempString = "\n-- Body --\n\n"
         if (object.requestBodyLength == 0) {
             tempString += "Request body is empty\n"
@@ -85,7 +85,7 @@ class NetfoxDetailsController: NetfoxViewController {
         return tempString
     }
     
-    func getResponseStringFromObject(_ object: NFXHTTPModel) -> NSAttributedString
+    func getResponseStringFromObject(_ object: NetfoxHTTPModel) -> NSAttributedString
     {
         if (object.noResponse) {
             return NSMutableAttributedString(string: "No response")
@@ -111,7 +111,7 @@ class NetfoxDetailsController: NetfoxViewController {
         return formatNFXString(tempString)
     }
     
-    func getResponseBodyStringFooter(_ object: NFXHTTPModel) -> String {
+    func getResponseBodyStringFooter(_ object: NetfoxHTTPModel) -> String {
         var tempString = "\n-- Body --\n\n"
         if (object.responseBodyLength == 0) {
             tempString += "Response body is empty\n"

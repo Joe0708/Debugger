@@ -79,7 +79,10 @@ public class DebuggerView: UIView {
         let folderBar =  UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(folderBarClickAction))
         folderBar.tintColor = #colorLiteral(red: 0.006328135729, green: 0.006339018233, blue: 0.006329820026, alpha: 1)
         
-        view.items = [hideBar, networkBar, folderBar, flexibleSpace, trashBar]
+        let viewHierarchyBar =  UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(viewHierarchyBarClickAction))
+        viewHierarchyBar.tintColor = #colorLiteral(red: 0.006328135729, green: 0.006339018233, blue: 0.006329820026, alpha: 1)
+        
+        view.items = [hideBar, networkBar, folderBar, viewHierarchyBar, flexibleSpace, trashBar]
         return view
     }()
     
@@ -173,6 +176,10 @@ public class DebuggerView: UIView {
             }
         }
         presentingViewController?.show(sandboxV, sender: nil)
+    }
+    
+    @objc private func viewHierarchyBarClickAction() {
+        FNEX.setup()
     }
     
     func toggle() {

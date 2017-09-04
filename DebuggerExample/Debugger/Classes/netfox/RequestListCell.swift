@@ -61,7 +61,7 @@ class RequestListCell: UITableViewCell {
         circleView.center.y = contentView.center.y
     }
     
-    func configForObject(_ obj: NFXHTTPModel?) {
+    func configForObject(_ obj: NetfoxHTTPModel?) {
         guard let `obj` = obj else { return }
         
         setStatus(obj.responseStatus ?? 999)

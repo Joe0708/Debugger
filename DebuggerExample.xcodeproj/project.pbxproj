@@ -9,6 +9,26 @@
 /* Begin PBXBuildFile section */
 		770F24521F5C1F34001CDB4D /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770F24501F5C1F34001CDB4D /* folder@2x.png */; };
 		770F24531F5C1F34001CDB4D /* folder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770F24511F5C1F34001CDB4D /* folder@3x.png */; };
+		770F6D3E1F5D881800B5EAAC /* DeviceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D321F5D881800B5EAAC /* DeviceInfoViewController.swift */; };
+		770F6D3F1F5D881800B5EAAC /* Netfox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D331F5D881800B5EAAC /* Netfox.swift */; };
+		770F6D401F5D881800B5EAAC /* NetfoxDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D341F5D881800B5EAAC /* NetfoxDetailsController.swift */; };
+		770F6D411F5D881800B5EAAC /* NetfoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D351F5D881800B5EAAC /* NetfoxViewController.swift */; };
+		770F6D421F5D881800B5EAAC /* NetfoxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D361F5D881800B5EAAC /* NetfoxHelper.swift */; };
+		770F6D431F5D881800B5EAAC /* NetfoxHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D371F5D881800B5EAAC /* NetfoxHTTPModel.swift */; };
+		770F6D451F5D881800B5EAAC /* NetfoxProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D391F5D881800B5EAAC /* NetfoxProtocol.swift */; };
+		770F6D461F5D881800B5EAAC /* RequestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D3A1F5D881800B5EAAC /* RequestDetailViewController.swift */; };
+		770F6D471F5D881800B5EAAC /* RequestListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D3B1F5D881800B5EAAC /* RequestListCell.swift */; };
+		770F6D481F5D881800B5EAAC /* RequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D3C1F5D881800B5EAAC /* RequestListViewController.swift */; };
+		770F6D491F5D881800B5EAAC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D3D1F5D881800B5EAAC /* SettingsViewController.swift */; };
+		770F6D521F5D8CCD00B5EAAC /* FNEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D4B1F5D8CCD00B5EAAC /* FNEX.swift */; };
+		770F6D531F5D8CCD00B5EAAC /* FNEX.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770F6D4C1F5D8CCD00B5EAAC /* FNEX.xcassets */; };
+		770F6D541F5D8CCD00B5EAAC /* FNEXToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D4D1F5D8CCD00B5EAAC /* FNEXToolBar.swift */; };
+		770F6D551F5D8CCD00B5EAAC /* FNEXTreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D4E1F5D8CCD00B5EAAC /* FNEXTreeTableViewCell.swift */; };
+		770F6D561F5D8CCD00B5EAAC /* FNEXTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D4F1F5D8CCD00B5EAAC /* FNEXTreeViewController.swift */; };
+		770F6D571F5D8CCD00B5EAAC /* FNEXUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D501F5D8CCD00B5EAAC /* FNEXUtil.swift */; };
+		770F6D581F5D8CCD00B5EAAC /* FNEXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D511F5D8CCD00B5EAAC /* FNEXViewController.swift */; };
+		770F6D5A1F5D8D1C00B5EAAC /* Debugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D591F5D8D1C00B5EAAC /* Debugger.swift */; };
+		770F6D5C1F5D915100B5EAAC /* ToolboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770F6D5B1F5D915100B5EAAC /* ToolboxViewController.swift */; };
 		7725FE871F5B9699000E201A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725FE861F5B9699000E201A /* AppDelegate.swift */; };
 		7725FE891F5B9699000E201A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725FE881F5B9699000E201A /* ViewController.swift */; };
 		7725FE8C1F5B9699000E201A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7725FE8A1F5B9699000E201A /* Main.storyboard */; };
@@ -26,18 +46,6 @@
 		7784430A1F5BF0A2009F367E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778442FF1F5BF0A2009F367E /* Extensions.swift */; };
 		7784430B1F5BF0A2009F367E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443001F5BF0A2009F367E /* Logger.swift */; };
 		778443201F5BF201009F367E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7784431F1F5BF201009F367E /* libsqlite3.tbd */; };
-		7784433A1F5BF811009F367E /* Netfox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443231F5BF811009F367E /* Netfox.swift */; };
-		7784433C1F5BF811009F367E /* NetfoxDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443251F5BF811009F367E /* NetfoxDetailsController.swift */; };
-		7784433E1F5BF811009F367E /* NetfoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443271F5BF811009F367E /* NetfoxViewController.swift */; };
-		7784433F1F5BF811009F367E /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443281F5BF811009F367E /* NFXHelper.swift */; };
-		778443401F5BF811009F367E /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443291F5BF811009F367E /* NFXHTTPModel.swift */; };
-		778443411F5BF811009F367E /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7784432A1F5BF811009F367E /* NFXHTTPModelManager.swift */; };
-		778443451F5BF811009F367E /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7784432E1F5BF811009F367E /* NFXProtocol.swift */; };
-		7784434A1F5BF811009F367E /* DeviceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443341F5BF811009F367E /* DeviceInfoViewController.swift */; };
-		7784434B1F5BF811009F367E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443351F5BF811009F367E /* SettingsViewController.swift */; };
-		7784434D1F5BF812009F367E /* RequestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443371F5BF811009F367E /* RequestDetailViewController.swift */; };
-		7784434E1F5BF812009F367E /* RequestListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443381F5BF811009F367E /* RequestListCell.swift */; };
-		7784434F1F5BF812009F367E /* RequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778443391F5BF811009F367E /* RequestListViewController.swift */; };
 		7794A8731F5C390900353FDA /* TextBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794A8711F5C390900353FDA /* TextBrowserViewController.swift */; };
 		7794A8741F5C390900353FDA /* ImageBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794A8721F5C390900353FDA /* ImageBrowserViewController.swift */; };
 		A857B3EA6B1ECA030EFC87A8 /* Pods_DebuggerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DBA362BCCF59C39A6842B2 /* Pods_DebuggerExample.framework */; };
@@ -48,6 +56,26 @@
 		63FABB19AA77A6F342A493E7 /* Pods-DebuggerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebuggerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DebuggerExample/Pods-DebuggerExample.release.xcconfig"; sourceTree = "<group>"; };
 		770F24501F5C1F34001CDB4D /* folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@2x.png"; sourceTree = "<group>"; };
 		770F24511F5C1F34001CDB4D /* folder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@3x.png"; sourceTree = "<group>"; };
+		770F6D321F5D881800B5EAAC /* DeviceInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewController.swift; sourceTree = "<group>"; };
+		770F6D331F5D881800B5EAAC /* Netfox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netfox.swift; sourceTree = "<group>"; };
+		770F6D341F5D881800B5EAAC /* NetfoxDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetfoxDetailsController.swift; sourceTree = "<group>"; };
+		770F6D351F5D881800B5EAAC /* NetfoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetfoxViewController.swift; sourceTree = "<group>"; };
+		770F6D361F5D881800B5EAAC /* NetfoxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetfoxHelper.swift; sourceTree = "<group>"; };
+		770F6D371F5D881800B5EAAC /* NetfoxHTTPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetfoxHTTPModel.swift; sourceTree = "<group>"; };
+		770F6D391F5D881800B5EAAC /* NetfoxProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetfoxProtocol.swift; sourceTree = "<group>"; };
+		770F6D3A1F5D881800B5EAAC /* RequestDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDetailViewController.swift; sourceTree = "<group>"; };
+		770F6D3B1F5D881800B5EAAC /* RequestListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListCell.swift; sourceTree = "<group>"; };
+		770F6D3C1F5D881800B5EAAC /* RequestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListViewController.swift; sourceTree = "<group>"; };
+		770F6D3D1F5D881800B5EAAC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		770F6D4B1F5D8CCD00B5EAAC /* FNEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEX.swift; sourceTree = "<group>"; };
+		770F6D4C1F5D8CCD00B5EAAC /* FNEX.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FNEX.xcassets; sourceTree = "<group>"; };
+		770F6D4D1F5D8CCD00B5EAAC /* FNEXToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXToolBar.swift; sourceTree = "<group>"; };
+		770F6D4E1F5D8CCD00B5EAAC /* FNEXTreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXTreeTableViewCell.swift; sourceTree = "<group>"; };
+		770F6D4F1F5D8CCD00B5EAAC /* FNEXTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXTreeViewController.swift; sourceTree = "<group>"; };
+		770F6D501F5D8CCD00B5EAAC /* FNEXUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXUtil.swift; sourceTree = "<group>"; };
+		770F6D511F5D8CCD00B5EAAC /* FNEXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXViewController.swift; sourceTree = "<group>"; };
+		770F6D591F5D8D1C00B5EAAC /* Debugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugger.swift; sourceTree = "<group>"; };
+		770F6D5B1F5D915100B5EAAC /* ToolboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolboxViewController.swift; sourceTree = "<group>"; };
 		7725FE831F5B9699000E201A /* DebuggerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebuggerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7725FE861F5B9699000E201A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7725FE881F5B9699000E201A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,18 +96,6 @@
 		778443001F5BF0A2009F367E /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		7784431B1F5BF1EB009F367E /* DebuggerExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DebuggerExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		7784431F1F5BF201009F367E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		778443231F5BF811009F367E /* Netfox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netfox.swift; sourceTree = "<group>"; };
-		778443251F5BF811009F367E /* NetfoxDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetfoxDetailsController.swift; sourceTree = "<group>"; };
-		778443271F5BF811009F367E /* NetfoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetfoxViewController.swift; sourceTree = "<group>"; };
-		778443281F5BF811009F367E /* NFXHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHelper.swift; sourceTree = "<group>"; };
-		778443291F5BF811009F367E /* NFXHTTPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHTTPModel.swift; sourceTree = "<group>"; };
-		7784432A1F5BF811009F367E /* NFXHTTPModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHTTPModelManager.swift; sourceTree = "<group>"; };
-		7784432E1F5BF811009F367E /* NFXProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXProtocol.swift; sourceTree = "<group>"; };
-		778443341F5BF811009F367E /* DeviceInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewController.swift; sourceTree = "<group>"; };
-		778443351F5BF811009F367E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		778443371F5BF811009F367E /* RequestDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDetailViewController.swift; sourceTree = "<group>"; };
-		778443381F5BF811009F367E /* RequestListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListCell.swift; sourceTree = "<group>"; };
-		778443391F5BF811009F367E /* RequestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListViewController.swift; sourceTree = "<group>"; };
 		7794A8711F5C390900353FDA /* TextBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBrowserViewController.swift; sourceTree = "<group>"; };
 		7794A8721F5C390900353FDA /* ImageBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowserViewController.swift; sourceTree = "<group>"; };
 		B4DBA362BCCF59C39A6842B2 /* Pods_DebuggerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DebuggerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +114,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		770F6D311F5D881800B5EAAC /* netfox */ = {
+			isa = PBXGroup;
+			children = (
+				770F6D321F5D881800B5EAAC /* DeviceInfoViewController.swift */,
+				770F6D331F5D881800B5EAAC /* Netfox.swift */,
+				770F6D341F5D881800B5EAAC /* NetfoxDetailsController.swift */,
+				770F6D351F5D881800B5EAAC /* NetfoxViewController.swift */,
+				770F6D361F5D881800B5EAAC /* NetfoxHelper.swift */,
+				770F6D371F5D881800B5EAAC /* NetfoxHTTPModel.swift */,
+				770F6D391F5D881800B5EAAC /* NetfoxProtocol.swift */,
+				770F6D3A1F5D881800B5EAAC /* RequestDetailViewController.swift */,
+				770F6D3B1F5D881800B5EAAC /* RequestListCell.swift */,
+				770F6D3C1F5D881800B5EAAC /* RequestListViewController.swift */,
+				770F6D3D1F5D881800B5EAAC /* SettingsViewController.swift */,
+			);
+			path = netfox;
+			sourceTree = "<group>";
+		};
+		770F6D4A1F5D8CCD00B5EAAC /* FNEX */ = {
+			isa = PBXGroup;
+			children = (
+				770F6D4B1F5D8CCD00B5EAAC /* FNEX.swift */,
+				770F6D4C1F5D8CCD00B5EAAC /* FNEX.xcassets */,
+				770F6D4D1F5D8CCD00B5EAAC /* FNEXToolBar.swift */,
+				770F6D4E1F5D8CCD00B5EAAC /* FNEXTreeTableViewCell.swift */,
+				770F6D4F1F5D8CCD00B5EAAC /* FNEXTreeViewController.swift */,
+				770F6D501F5D8CCD00B5EAAC /* FNEXUtil.swift */,
+				770F6D511F5D8CCD00B5EAAC /* FNEXViewController.swift */,
+			);
+			path = FNEX;
+			sourceTree = "<group>";
+		};
 		7725FE7A1F5B9699000E201A = {
 			isa = PBXGroup;
 			children = (
@@ -160,49 +208,17 @@
 		778442FD1F5BF0A2009F367E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				778443211F5BF811009F367E /* netfox */,
+				770F6D4A1F5D8CCD00B5EAAC /* FNEX */,
+				770F6D311F5D881800B5EAAC /* netfox */,
 				778442FE1F5BF0A2009F367E /* DebuggerView.swift */,
 				778442FF1F5BF0A2009F367E /* Extensions.swift */,
 				778443001F5BF0A2009F367E /* Logger.swift */,
 				7794A8711F5C390900353FDA /* TextBrowserViewController.swift */,
 				7794A8721F5C390900353FDA /* ImageBrowserViewController.swift */,
+				770F6D591F5D8D1C00B5EAAC /* Debugger.swift */,
+				770F6D5B1F5D915100B5EAAC /* ToolboxViewController.swift */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		778443211F5BF811009F367E /* netfox */ = {
-			isa = PBXGroup;
-			children = (
-				778443221F5BF811009F367E /* Core */,
-				778443321F5BF811009F367E /* iOS */,
-			);
-			path = netfox;
-			sourceTree = "<group>";
-		};
-		778443221F5BF811009F367E /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				778443231F5BF811009F367E /* Netfox.swift */,
-				778443251F5BF811009F367E /* NetfoxDetailsController.swift */,
-				778443271F5BF811009F367E /* NetfoxViewController.swift */,
-				778443281F5BF811009F367E /* NFXHelper.swift */,
-				778443291F5BF811009F367E /* NFXHTTPModel.swift */,
-				7784432A1F5BF811009F367E /* NFXHTTPModelManager.swift */,
-				7784432E1F5BF811009F367E /* NFXProtocol.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		778443321F5BF811009F367E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				778443341F5BF811009F367E /* DeviceInfoViewController.swift */,
-				778443351F5BF811009F367E /* SettingsViewController.swift */,
-				778443371F5BF811009F367E /* RequestDetailViewController.swift */,
-				778443381F5BF811009F367E /* RequestListCell.swift */,
-				778443391F5BF811009F367E /* RequestListViewController.swift */,
-			);
-			path = iOS;
 			sourceTree = "<group>";
 		};
 		804213546C62F3E490438829 /* Frameworks */ = {
@@ -299,6 +315,7 @@
 				778443061F5BF0A2009F367E /* trash@3x.png in Resources */,
 				778443031F5BF0A2009F367E /* network@2x.png in Resources */,
 				7725FE8E1F5B9699000E201A /* Assets.xcassets in Resources */,
+				770F6D531F5D8CCD00B5EAAC /* FNEX.xcassets in Resources */,
 				7725FE8C1F5B9699000E201A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,13 +365,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-DebuggerExample/Pods-DebuggerExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SandboxBrowser/SandboxBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SpreadsheetView/SpreadsheetView.framework",
-				"${BUILT_PRODUCTS_DIR}/netfox/netfox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SandboxBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpreadsheetView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/netfox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -368,25 +383,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				778443401F5BF811009F367E /* NFXHTTPModel.swift in Sources */,
-				7784434A1F5BF811009F367E /* DeviceInfoViewController.swift in Sources */,
-				7784433E1F5BF811009F367E /* NetfoxViewController.swift in Sources */,
-				7784434F1F5BF812009F367E /* RequestListViewController.swift in Sources */,
+				770F6D3F1F5D881800B5EAAC /* Netfox.swift in Sources */,
+				770F6D521F5D8CCD00B5EAAC /* FNEX.swift in Sources */,
+				770F6D471F5D881800B5EAAC /* RequestListCell.swift in Sources */,
 				7794A8741F5C390900353FDA /* ImageBrowserViewController.swift in Sources */,
-				7784434D1F5BF812009F367E /* RequestDetailViewController.swift in Sources */,
-				7784434B1F5BF811009F367E /* SettingsViewController.swift in Sources */,
 				7784430B1F5BF0A2009F367E /* Logger.swift in Sources */,
+				770F6D481F5D881800B5EAAC /* RequestListViewController.swift in Sources */,
+				770F6D491F5D881800B5EAAC /* SettingsViewController.swift in Sources */,
 				7725FE891F5B9699000E201A /* ViewController.swift in Sources */,
-				778443411F5BF811009F367E /* NFXHTTPModelManager.swift in Sources */,
-				7784433F1F5BF811009F367E /* NFXHelper.swift in Sources */,
-				7784433C1F5BF811009F367E /* NetfoxDetailsController.swift in Sources */,
-				7784434E1F5BF812009F367E /* RequestListCell.swift in Sources */,
+				770F6D541F5D8CCD00B5EAAC /* FNEXToolBar.swift in Sources */,
+				770F6D561F5D8CCD00B5EAAC /* FNEXTreeViewController.swift in Sources */,
 				778443091F5BF0A2009F367E /* DebuggerView.swift in Sources */,
+				770F6D571F5D8CCD00B5EAAC /* FNEXUtil.swift in Sources */,
+				770F6D461F5D881800B5EAAC /* RequestDetailViewController.swift in Sources */,
+				770F6D551F5D8CCD00B5EAAC /* FNEXTreeTableViewCell.swift in Sources */,
+				770F6D411F5D881800B5EAAC /* NetfoxViewController.swift in Sources */,
+				770F6D421F5D881800B5EAAC /* NetfoxHelper.swift in Sources */,
+				770F6D3E1F5D881800B5EAAC /* DeviceInfoViewController.swift in Sources */,
+				770F6D401F5D881800B5EAAC /* NetfoxDetailsController.swift in Sources */,
+				770F6D5C1F5D915100B5EAAC /* ToolboxViewController.swift in Sources */,
 				7725FE871F5B9699000E201A /* AppDelegate.swift in Sources */,
-				7784433A1F5BF811009F367E /* Netfox.swift in Sources */,
+				770F6D581F5D8CCD00B5EAAC /* FNEXViewController.swift in Sources */,
+				770F6D451F5D881800B5EAAC /* NetfoxProtocol.swift in Sources */,
 				7784430A1F5BF0A2009F367E /* Extensions.swift in Sources */,
 				7794A8731F5C390900353FDA /* TextBrowserViewController.swift in Sources */,
-				778443451F5BF811009F367E /* NFXProtocol.swift in Sources */,
+				770F6D5A1F5D8D1C00B5EAAC /* Debugger.swift in Sources */,
+				770F6D431F5D881800B5EAAC /* NetfoxHTTPModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

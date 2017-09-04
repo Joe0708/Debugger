@@ -66,11 +66,11 @@ open class Netfox: NSObject {
     }
     
     fileprivate func register() {
-        URLProtocol.registerClass(NFXProtocol.self)
+        URLProtocol.registerClass(NetfoxProtocol.self)
     }
     
     fileprivate func unregister() {
-        URLProtocol.unregisterClass(NFXProtocol.self)
+        URLProtocol.unregisterClass(NetfoxProtocol.self)
     }
     
     func motionDetected() {
@@ -151,6 +151,9 @@ open class Netfox: NSObject {
         return self.filters
     }
     
+    internal var controller: RequestListViewController {
+        return RequestListViewController()
+    }
 }
 
 extension Netfox {

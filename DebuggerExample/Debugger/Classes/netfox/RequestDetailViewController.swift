@@ -39,7 +39,7 @@ class RequestDetailViewController: NetfoxDetailsController, MFMailComposeViewCon
     var requestView: UIScrollView = UIScrollView()
     var responseView: UIScrollView = UIScrollView()
     
-    var selectedModel: NFXHTTPModel = NFXHTTPModel()
+    var selectedModel: NetfoxHTTPModel = NetfoxHTTPModel()
     
     var bodyType: NetFoxBodyType = .response {
         didSet {

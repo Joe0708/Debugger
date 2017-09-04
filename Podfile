@@ -7,7 +7,6 @@ target 'DebuggerExample' do
 
   # Pods for DebuggerExample
 # pod 'LogConsole'
-pod 'netfox', git: 'https://github.com/Joe0708/netfox.git'
 pod 'SandboxBrowser'
 pod 'SpreadsheetView'
 

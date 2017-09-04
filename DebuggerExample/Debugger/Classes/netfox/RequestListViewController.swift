@@ -45,8 +45,8 @@ class RequestListViewController: NetfoxViewController, UITableViewDelegate, UITa
         return searchView
     }()
     
-    var tableData = [NFXHTTPModel]()
-    var filteredTableData = [NFXHTTPModel]()
+    var tableData = [NetfoxHTTPModel]()
+    var filteredTableData = [NetfoxHTTPModel]()
     
     // MARK: View Life Cycle
     
@@ -88,6 +88,7 @@ class RequestListViewController: NetfoxViewController, UITableViewDelegate, UITa
     
     func close() {
         Netfox.shared.hide()
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: UISearchResultsUpdating
@@ -109,7 +110,7 @@ class RequestListViewController: NetfoxViewController, UITableViewDelegate, UITa
         let searchPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
         
         let array = (NFXHTTPModelManager.sharedInstance.getModels as NSArray).filtered(using: searchPredicate)
-        self.filteredTableData = array as! [NFXHTTPModel]
+        self.filteredTableData = array as! [NetfoxHTTPModel]
     }
     
     // MARK: UITableViewDataSource

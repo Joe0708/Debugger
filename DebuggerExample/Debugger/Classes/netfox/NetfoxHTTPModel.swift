@@ -1,10 +1,3 @@
-//
-//  NFXHTTPModel.swift
-//  netfox
-//
-//  Copyright © 2016 netfox. All rights reserved.
-//
-
 import Foundation
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
@@ -17,8 +10,7 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   }
 }
 
-
-class NFXHTTPModel: NSObject {
+class NetfoxHTTPModel: NSObject {
     var requestURL: URL?
     var requestURLString: String? {
         return requestURL != nil ? requestURL!.absoluteString : "Unknown"
@@ -48,14 +40,14 @@ class NFXHTTPModel: NSObject {
     var noResponse: Bool = true
     
     func saveRequest(_ request: URLRequest) {
-        self.requestDate = Date()
-        self.requestTime = getTimeFromDate(self.requestDate!)
-        self.requestURL = request.url
-        self.requestMethod = request.httpMethod ?? "Unknown"
-        self.requestCachePolicy = request.getNFXCachePolicy()
-        self.requestTimeout = request.getNFXTimeout()
-        self.requestHeaders = request.getNFXHeaders()
-        self.requestType = requestHeaders?["Content-Type"] as! String?
+        requestDate = Date()
+        requestTime = getTimeFromDate(requestDate!)
+        requestURL = request.url
+        requestMethod = request.httpMethod ?? "Unknown"
+        requestCachePolicy = request.getNFXCachePolicy()
+        requestTimeout = request.getNFXTimeout()
+        requestHeaders = request.getNFXHeaders()
+        requestType = requestHeaders?["Content-Type"] as? String
         saveRequestBodyData(request.getNFXBody())
         formattedRequestLogEntry().appendToFile(filePath: sessionLogPath)
 
@@ -66,21 +58,21 @@ class NFXHTTPModel: NSObject {
     }
     
     func saveResponse(_ response: URLResponse, data: Data) {
-        self.noResponse = false
+        noResponse = false
         
-        self.responseDate = Date()
-        self.responseTime = getTimeFromDate(self.responseDate!)
-        self.responseStatus = (response as? HTTPURLResponse)?.statusCode ?? 999
-        self.responseHeaders = response.getNFXHeaders()
+        responseDate = Date()
+        responseTime = getTimeFromDate(responseDate!)
+        responseStatus = (response as? HTTPURLResponse)?.statusCode ?? 999
+        responseHeaders = response.getNFXHeaders()
         
         let headers = response.getNFXHeaders()
         
         if let contentType = headers["Content-Type"] as? String {
-            self.responseType = contentType.components(separatedBy: ";")[0]
-            self.shortType = getShortTypeFrom(self.responseType!).rawValue
+            responseType = contentType.components(separatedBy: ";")[0]
+            shortType = getShortTypeFrom(self.responseType!).rawValue
         }
         
-        self.timeInterval = Float(self.responseDate!.timeIntervalSince(self.requestDate!))
+        timeInterval = Float(responseDate!.timeIntervalSince(requestDate!))
         
         saveResponseBodyData(data)
         formattedResponseLogEntry().appendToFile(filePath: sessionLogPath)
@@ -88,7 +80,7 @@ class NFXHTTPModel: NSObject {
     
     
     func saveRequestBodyData(_ data: Data) {
-        self.requestBodyLength = data.count
+        requestBodyLength = data.count
         if let bodyString = String(data: data, encoding: .utf8) {
             saveData(bodyString, toFile: getRequestBodyFilepath())
         }
@@ -97,20 +89,17 @@ class NFXHTTPModel: NSObject {
     func saveResponseBodyData(_ data: Data){
         var bodyString: String?
         
-        if self.shortType == HTTPModelShortType.IMAGE.rawValue {
+        if shortType == HTTPModelShortType.IMAGE.rawValue {
             bodyString = data.base64EncodedString(options: .endLineWithLineFeed)
 
-        } else {
-            if let tempBodyString = String(data: data, encoding: .utf8) {
+        } else if let tempBodyString = String(data: data, encoding: .utf8) {
                 bodyString = tempBodyString
-            }
         }
         
         if (bodyString != nil) {
             self.responseBodyLength = data.count
             saveData(bodyString!, toFile: getResponseBodyFilepath())
         }
-        
     }
     
     fileprivate func prettyOutput(_ rawData: Data, contentType: String? = nil) -> String{
@@ -281,5 +270,44 @@ class NFXHTTPModel: NSObject {
         
         return log;
     }
+}
 
+
+final class NFXHTTPModelManager {
+    
+    static let sharedInstance = NFXHTTPModelManager()
+    
+    fileprivate var models = [NetfoxHTTPModel]()
+    
+    func add(_ obj: NetfoxHTTPModel) {
+        models.insert(obj, at: 0)
+    }
+    
+    func clear() {
+        models.removeAll()
+    }
+    
+    var getModels: [NetfoxHTTPModel] {
+        var predicates = [NSPredicate]()
+        
+        let filterValues = Netfox.shared.getCachedFilters()
+        let filterNames = HTTPModelShortType.allValues
+        
+        var index = 0
+        for filterValue in filterValues {
+            if filterValue {
+                let filterName = filterNames[index].rawValue
+                let predicate = NSPredicate(format: "shortType == '\(filterName)'")
+                predicates.append(predicate)
+                
+            }
+            index += 1
+        }
+        
+        let searchPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
+        
+        let array = (models as NSArray).filtered(using: searchPredicate)
+        
+        return array as! [NetfoxHTTPModel]
+    }
 }

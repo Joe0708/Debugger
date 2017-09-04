@@ -22,6 +22,7 @@ class ImageBrowserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Image preview"        
+        title = "Image preview"
+        view.backgroundColor = .white
     }
 }
